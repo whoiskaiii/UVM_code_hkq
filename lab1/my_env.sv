@@ -1,5 +1,5 @@
 class my_env extends uvm_env;
-    // 将自定义的 driver 类向 UVM 注册
+    // 将自定义的 env 类向 UVM 注册
     `uvm_compnent_utils(my_env)
 
     // 定义 agent 的句柄

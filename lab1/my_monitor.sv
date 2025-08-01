@@ -1,5 +1,5 @@
 class my_monitor extends uvm_monitor;
-    // 将自定义的 driver 类向 UVM 注册
+    // 将自定义的 monitor 类向 UVM 注册
     `uvm_compnent_utils(my_monitor)
 
     // 构造函数，name 为实例化时对象的名称, uvm_component 为实例化时父对象的指针
