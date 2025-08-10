@@ -17,5 +17,5 @@ class my_env extends uvm_env;
         m_agt = master_agent::type_id::create("m_agt", this);
     endfunction
 
-    // 2. 简化的 env，省去组件的连接
+    // 2. 当前为简化的 env，省去组件的连接
 endclass
