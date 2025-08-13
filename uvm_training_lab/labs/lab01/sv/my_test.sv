@@ -10,9 +10,9 @@ class my_test extends uvm_test;
         super.new(name, parent);
     endfunction
 
-    // 1. 重写 build_pahse() 函数
-    virtual function void build_pahse(uvm_phase phase);
-        super.build_pahse(phase);
+    // 1. 重写 build_phase() 函数
+    virtual function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
         // 使用 UVM 的 factory 机制创建对象，"m_env" 为该对象的名字，this 为实例化时指向父对象的句柄（父对象即当前的 testcase）
         m_env = my_env::type_id::create("m_env", this);
 
@@ -24,7 +24,7 @@ class my_test extends uvm_test;
     endfunction
 
     // 2. 重写 start_of_simulation_phase()
-    virtual function void start_of_simulation_phase(uvm_phase phase)
+    virtual function void start_of_simulation_phase(uvm_phase phase);
         super.start_of_simulation_phase(phase);
         uvm_top.print_topology(uvm_default_tree_printer); // 打印当前验证环境的结构
     endfunction

@@ -1,1 +1,3 @@
-/uvm-1.1d
+uvm-1.1d/
+*.swp
+*.log

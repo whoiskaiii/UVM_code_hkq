@@ -5,7 +5,7 @@ class master_agent extends uvm_agent;
     // 定义 agent 中 sequencer、driver、monitor 的句柄
     my_sequencer m_seqr;
     my_driver m_driv;
-    m_monitor m_moni;
+    my_monitor m_moni;
 
     // 构造函数，name 为实例化时对象的默认名称, uvm_component 为实例化时指向父对象的句柄
     function new(string name = "master_agent", uvm_component parent);
@@ -24,7 +24,7 @@ class master_agent extends uvm_agent;
             m_seqr = my_sequencer::type_id::create("m_seqr", this);
             m_driv = my_driver::type_id::create("m_driv", this);
         end
-        m_moni = m_monitor::type_id::create("m_moni", this);
+        m_moni = my_monitor::type_id::create("m_moni", this);
     endfunction
 
     // 2. 在 connect_phase() 中连接 agent 中的各个组件

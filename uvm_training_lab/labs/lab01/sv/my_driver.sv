@@ -11,7 +11,7 @@ class my_driver extends uvm_driver #(my_transaction);
     endfunction
 
     // 在 run_phase() 任务中完成 driver 的功能
-    virtual task run_phase(uvm_phase phase)
+    virtual task run_phase(uvm_phase phase);
         forever begin
             // 通过 seq_item_port，从 sequencer 中获取下一个 sequence_item（transaction 对象），req 句柄指向获取到的对象，
             // req 句柄的类型是开头定义 my_driver 类时传入的 my_transaction 类型
