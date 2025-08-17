@@ -8,7 +8,7 @@ class my_monitor extends uvm_monitor;
     endfunction
 
     virtual task  reset_phase(uvm_phase phase);
-        #50;
+        #150;
         `uvm_info("MON_RESET_PHASE", "Now monitor reset the DUT...", UVM_MEDIUM)
     endtask
 
