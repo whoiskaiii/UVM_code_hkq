@@ -11,14 +11,16 @@ class my_driver extends uvm_driver #(my_transaction);
     endfunction
 
     virtual task  reset_phase(uvm_phase phase);
+        phase.raise_objection(this);
         #100;
-        `uvm_info("DRV_RESET_PHASE"， "Now driver reset the DUT...", UVM_MEDIUM)
+        `uvm_info("DRV_RESET_PHASE", "Now driver reset the DUT...", UVM_MEDIUM)
+        phase.drop_objection(this);
     endtask
 
     virtual task  configure_phase(uvm_phase phase);
         phase.raise_objection(this);
         #100;
-        `uvm_info("DRV_CONFIGURE_PHASE"， "Now driver config the DUT...", UVM_MEDIUM)
+        `uvm_info("DRV_CONFIGURE_PHASE", "Now driver config the DUT...", UVM_MEDIUM)
         phase.drop_objection(this);
     endtask
 
