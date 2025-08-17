@@ -15,4 +15,4 @@ uvm_sim:
 
 clean:
 	rm -rf \
-	AN.DB DVEfiles csrc simv.* *simv inter.vpd ucli.key *.log novas* *fsdb verdiLog
+	AN.DB DVEfiles csrc simv.* *simv inter.vpd ucli.key *.log novas* *fsdb verdiLog vc_hdrs.h
