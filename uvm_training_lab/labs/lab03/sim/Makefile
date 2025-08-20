@@ -1,4 +1,5 @@
-tc = my_test_type_da3
+# tc = my_test_type_da3
+tc = my_test_inst_da3
 
 uvm_all: clean uvm_cmp uvm_sim
 

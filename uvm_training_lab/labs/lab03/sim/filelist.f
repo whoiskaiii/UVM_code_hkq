@@ -8,4 +8,5 @@
 ../sv/my_env.sv
 ../sv/my_test.sv
 ../sv/my_test_type_da3.sv
+../sv/my_test_inst_da3.sv
 ../sv/test.sv
