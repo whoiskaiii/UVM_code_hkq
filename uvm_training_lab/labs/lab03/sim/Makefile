@@ -1,3 +1,5 @@
+tc = my_test_type_da3
+
 uvm_all: clean uvm_cmp uvm_sim
 
 uvm_cmp:
@@ -10,7 +12,7 @@ uvm_cmp:
 
 uvm_sim:
 	./simv \
-	+UVM_TESTNAME=my_test \
+	+UVM_TESTNAME=$(tc) \
 	-l uvm_sim.log \
 
 clean:

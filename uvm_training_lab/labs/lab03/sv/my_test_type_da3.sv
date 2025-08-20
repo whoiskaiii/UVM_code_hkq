@@ -8,7 +8,7 @@ class my_test_type_da3 extends my_test;
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         set_type_override_by_type(my_transaction::get_type(),
-                                  my_test_type_da3::get_type());
+                                  my_transaction_da3::get_type());
     endfunction
 
     virtual function void report_phase(uvm_phase phase);

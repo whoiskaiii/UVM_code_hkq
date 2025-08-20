@@ -1,4 +1,5 @@
 ../sv/my_transaction.sv
+../sv/my_transaction_da3.sv
 ../sv/my_sequence.sv
 ../sv/my_sequencer.sv
 ../sv/my_driver.sv
@@ -6,4 +7,5 @@
 ../sv/master_agent.sv
 ../sv/my_env.sv
 ../sv/my_test.sv
+../sv/my_test_type_da3.sv
 ../sv/test.sv
