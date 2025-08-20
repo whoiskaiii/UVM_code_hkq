@@ -1,5 +1,5 @@
-class my_test_type_da3 extends my_test;
-    `uvm_component_utils(my_test_type_da3)
+class my_test_inst_da3 extends my_test;
+    `uvm_component_utils(my_test_inst_da3)
 
     function new(string name = "", uvm_component parent);
         super.new(name, parent);
@@ -7,7 +7,7 @@ class my_test_type_da3 extends my_test;
 
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        set_inst_override_by_type("m_env.m_agent.m_seqr*"
+        set_inst_override_by_type("m_env.m_agt.m_seqr*",
                                   my_transaction::get_type(),
                                   my_transaction_da3::get_type());
     endfunction
