@@ -10,7 +10,7 @@ class my_sequence extends uvm_sequence #(my_transaction); // uvm_sequence 是参
     endfunction
 
     function void pre_randomize();
-        uvm_config_db#(int)::get(my_sequencer, "", "item_num", item_num);
+        uvm_config_db#(int)::get(m_sequencer, "", "item_num", item_num);
     endfunction
 
     // body() 任务，用于产生、控制 transition 序列
