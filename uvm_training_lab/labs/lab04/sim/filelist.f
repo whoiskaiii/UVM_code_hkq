@@ -1,3 +1,4 @@
+../../rtl/touter.v
 ../sv/my_transaction.sv
 ../sv/my_transaction_da3.sv
 ../sv/my_sequence.sv
@@ -9,4 +10,5 @@
 ../sv/my_test.sv
 ../sv/my_test_type_da3.sv
 ../sv/my_test_inst_da3.sv
-../sv/test.sv
+## ../sv/test.sv
+../sv/top.sv
