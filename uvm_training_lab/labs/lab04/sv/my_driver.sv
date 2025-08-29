@@ -22,7 +22,7 @@ class my_driver extends uvm_driver #(my_transaction);
     // 初始化 driver 接口信号
     virtual task pre_reset_phase(uvm_phase phase);
         super.pre_reset_phase(phase);
-        uvm_info("TRACE", $sformatf("%m"), UVM_HIGH); // %m 是 SV 的系统函数，用于打印当前的层次路径名
+        `uvm_info("TRACE", $sformatf("%m"), UVM_HIGH); // %m 是 SV 的系统函数，用于打印当前的层次路径名
         phase.raise_objection(this);
         m_vif.driver_cb.frame_n <=  'x;
         m_vif.driver_cb.valid_n <=  'x;
@@ -33,7 +33,7 @@ class my_driver extends uvm_driver #(my_transaction);
 
     virtual task reset_phase(uvm_phase phase);  
         super.pre_reset_phase(phase);
-        uvm_info("TRACE", $sformatf("%m"), UVM_HIGH); // %m 是 SV 的系统函数，用于打印当前的层次路径名
+        `uvm_info("TRACE", $sformatf("%m"), UVM_HIGH); // %m 是 SV 的系统函数，用于打印当前的层次路径名
         phase.raise_objection(this);
         m_vif.driver_cb.reset_n <=  '1;
         m_vif.driver_cb.frame_n <=  '1;
@@ -54,7 +54,7 @@ class my_driver extends uvm_driver #(my_transaction);
 
         forever begin
             seq_item_port.get_next_item(req);
-            `uvm_info("DRV_RUN_PHASE", req.sprint(), UVM_MIDIUM)
+            `uvm_info("DRV_RUN_PHASE", req.sprint(), UVM_MEDIUM)
             
             // send address
             m_vif.driver_cb.frame_n[req.sa] <=  1'b0;

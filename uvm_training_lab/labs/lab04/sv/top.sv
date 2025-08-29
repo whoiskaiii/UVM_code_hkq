@@ -30,8 +30,8 @@ module top;
         run_test();
     end
 
-    initial begin
-        $wlfdumpvars();
-    end
+    // initial begin
+       // $wlfdumpvars();
+    // end
 
 endmodule

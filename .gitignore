@@ -6,3 +6,6 @@ simv
 simv.daidir/
 ucli.key
 vc_hdrs.h
+verdiLog/
+*.fsdb
+novas.conf
