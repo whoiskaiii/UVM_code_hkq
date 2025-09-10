@@ -1,0 +1,22 @@
+../../../rtl/router.v
+
+../sv/my_transaction.sv
+../sv/my_transaction_da3.sv
+
+../sv/my_sequence.sv
+../sv/my_sequencer.sv
+../sv/my_driver.sv
+../sv/my_monitor.sv
+../sv/master_agent.sv
+../sv/my_env.sv
+
+../sv/my_test.sv
+../sv/my_test_type_da3.sv
+../sv/my_test_inst_da3.sv
+
+../sv/agent_config.sv
+../sv/env_config.sv
+
+## ../sv/test.sv
+../sv/dut_interface.sv
+../sv/top.sv
