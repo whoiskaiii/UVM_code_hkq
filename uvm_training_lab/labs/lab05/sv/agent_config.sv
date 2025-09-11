@@ -12,6 +12,6 @@ class agent_config extends uvm_object; // 数据建模一般扩展于 uvm_object
     `uvm_object_utils_end
 
     function new(string name = "agent_config");
-        super.new(name)
+        super.new(name);
     endfunction //new()
 endclass //agent_config extends uvm_object

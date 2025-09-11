@@ -17,7 +17,7 @@ class my_driver extends uvm_driver #(my_transaction);
     // 在 build_phase() 中使用 uvm_config_db::get 获取 virtual interface 的配置
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        if (!uvm_config_db#(int unsigned)get::(this, "", "pad_cycles", pad_cycles)) begin
+        if (!uvm_config_db#(int unsigned)::get(this, "", "pad_cycles", pad_cycles)) begin
             `uvm_fatal("CONFIG_FATAL", "Driver can not get the pad_cycles !!!")
         end
         if (!uvm_config_db#(virtual dut_interface)::get(this, "", "vif", m_vif)) begin

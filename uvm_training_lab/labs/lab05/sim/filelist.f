@@ -1,5 +1,8 @@
 ../../../rtl/router.v
 
+../sv/agent_config.sv
+../sv/env_config.sv
+
 ../sv/my_transaction.sv
 ../sv/my_transaction_da3.sv
 
@@ -13,9 +16,6 @@
 ../sv/my_test.sv
 ../sv/my_test_type_da3.sv
 ../sv/my_test_inst_da3.sv
-
-../sv/agent_config.sv
-../sv/env_config.sv
 
 ## ../sv/test.sv
 ../sv/dut_interface.sv

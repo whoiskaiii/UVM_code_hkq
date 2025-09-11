@@ -21,11 +21,11 @@ class my_env extends uvm_env;
         uvm_config_db#(agent_config)::set(this, "m_agt", "m_agent_cfg", m_env_cfg.m_agent_cfg);
 
         if(m_env_cfg.is_coverage) begin
-            uvm_info("COVERAGE_ENABLE", "The coverage function is enable for this testcase", UVM_MEDIUM)
+            `uvm_info("COVERAGE_ENABLE", "The coverage function is enable for this testcase", UVM_MEDIUM)
         end
 
         if(m_env_cfg.is_check) begin
-            uvm_info("CHECK_ENABLE", "The check function is enable for this testcase", UVM_MEDIUM)
+            `uvm_info("CHECK_ENABLE", "The check function is enable for this testcase", UVM_MEDIUM)
         end
 
         // 使用 UVM 的 factory 机制创建对象，"m_agt" 为该对象的名字，this 为实例化时指向父对象的句柄（父对象即当前的 env）

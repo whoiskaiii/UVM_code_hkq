@@ -7,12 +7,13 @@ uvm_all: clean uvm_cmp uvm_sim
 uvm_cmp:
 	vcs \
 	-sverilog -full64 -timescale=1ns/1ps \
-	+acc +vpi \
-	-ntb_opts_uvm \
+	-debug_access+r+w+nomemcbk -debug_region+cell \
+	+vpi \
 	+incdir+$(UVM_HOME)/src $(UVM_HOME)/src/uvm.sv $(UVM_HOME)/src/dpi/uvm_dpi.cc \
 	-CFLAGS -DVCS \
 	-f filelist.f -l uvm_cmp.log \
-	-debug_acc+all
+	# -debug_acc+all \
+	# -ntb_opts_uvm \
 
 uvm_sim:
 	./simv \

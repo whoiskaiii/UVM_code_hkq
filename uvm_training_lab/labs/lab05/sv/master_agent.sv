@@ -20,7 +20,7 @@ class master_agent extends uvm_agent;
         super.build_phase(phase); // 执行父类的 build_phase() 函数
 
         if (!uvm_config_db#(agent_config)::get(this, "", "m_agent_cfg", m_agent_cfg)) begin
-            `uvm_fatal("CONFIG_FATAL, master_agent can not get the configuration !!!")
+            `uvm_fatal("CONFIG_FATAL", "master_agent can not get the configuration !!!")
         end
 
         is_active = m_agent_cfg.is_active;

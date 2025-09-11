@@ -3,7 +3,7 @@ class my_test extends uvm_test;
     `uvm_component_utils(my_test)
 
     my_env m_env; // 定义 env 的句柄
-    env_config m_env_cfg // 定义 env_config 的句柄
+    env_config m_env_cfg; // 定义 env_config 的句柄
 
     // 构造函数，name 为实例化时对象的名称, uvm_component 为实例化时指向父对象的句柄
     function new(string name = "my_test", uvm_component parent);
@@ -38,7 +38,7 @@ class my_test extends uvm_test;
         end
 
         // 将 m_env_cfg 配置到 m_env 中，id 为 env_cfg
-        uvm_config_db#(env_config)::set(this, "m_env", "env_cfg", m_env_cfg)
+        uvm_config_db#(env_config)::set(this, "m_env", "env_cfg", m_env_cfg);
     endfunction
 
     // 2. 重写 start_of_simulation_phase()
