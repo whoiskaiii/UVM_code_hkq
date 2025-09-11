@@ -19,7 +19,6 @@ class my_monitor extends uvm_monitor;
 
     // 在 run_phase() 任务中完成 monitor 的功能
     virtual task run_phase(uvm_phase phase);
-        my_transaction tr;
         forever begin
             `uvm_info("MON_RUN_PHASE", "Monitor is running", UVM_MEDIUM); // 打印等级为 UVM_MEDIUM
             #100;
