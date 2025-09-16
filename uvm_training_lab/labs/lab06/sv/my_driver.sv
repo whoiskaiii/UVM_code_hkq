@@ -59,7 +59,7 @@ class my_driver extends uvm_driver #(my_transaction);
         repeat(15) @(m_vif.driver_cb);
 
         forever begin
-            seq_item_port.get_next_item(req);
+            seq_item_port.get_next_item(req); // req 作为获取到的事物对象的句柄，可通过 req 访问事务对象中的成员
             `uvm_info("DRV_RUN_PHASE", req.sprint(), UVM_MEDIUM)
             
             // send address
