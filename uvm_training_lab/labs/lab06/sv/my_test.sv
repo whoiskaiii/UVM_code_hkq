@@ -19,9 +19,9 @@ class my_test extends uvm_test;
 
         // 使用 uvm_config 机制，为 agent 中的 sequencer 配置 default_sequence
         // uvm_config_db 是 UVM 内建的参数化的类，set() 是 uvm_config_db 中的静态函数，用于为指定的目标设置资源
-        uvm_config_db#(uvm_object_wrapper)::set(
-            this, "*.m_seqr.run_phase",
-            "default_sequence", my_sequence::get_type());
+        // uvm_config_db#(uvm_object_wrapper)::set(
+        //     this, "*.m_seqr.run_phase",
+        //     "default_sequence", my_sequence::get_type());
 
         uvm_config_db#(int)::set(this, "*.m_seqr", "item_num", 20);
 
@@ -46,5 +46,14 @@ class my_test extends uvm_test;
         super.start_of_simulation_phase(phase);
         uvm_top.print_topology(uvm_default_tree_printer); // 打印当前验证环境的结构
     endfunction
+
+    // 在 run_phase() 中手动启动 sequence
+    virtual task  run_phase(uvm_phase phase);
+        my_sequence m_seq;
+        m_seq = my_sequence::type_id::create("m_seq");
+        phase.raise_objection(this);
+        m_seq.start(m_env.m_agent.m_seqr); // 为 sequence 指定相关联的 sequencer
+        phase.drop_objection(this);
+    endtask
 
 endclass
