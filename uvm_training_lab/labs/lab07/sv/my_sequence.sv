@@ -23,6 +23,10 @@ class my_sequence extends uvm_sequence #(my_transaction); // uvm_sequence 是参
             // 1. uvm_do 为 uvm 内建的宏，每调用一次则产生并发送一个 transaction 对象
             // 2. 因为父类 uvm_sequence 的参数为 (req, rsp)，所以 req 为指向 my_transaction 对象的句柄
             `uvm_do(req);
+
+            // 获取、打印响应
+            get_response(rsp); // 将获取到的响应赋值给 rsp 句柄
+            `uvm_info("SEQ", {"\n", "Sequence get the response: \n", rsp.sprint()}, UVM_MEDIUN)
         end
 
         #100;
