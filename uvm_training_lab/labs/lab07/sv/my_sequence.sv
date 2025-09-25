@@ -26,7 +26,7 @@ class my_sequence extends uvm_sequence #(my_transaction); // uvm_sequence 是参
 
             // 获取、打印响应
             get_response(rsp); // 将获取到的响应赋值给 rsp 句柄
-            `uvm_info("SEQ", {"\n", "Sequence get the response: \n", rsp.sprint()}, UVM_MEDIUN)
+            `uvm_info("SEQ", {"\n", "Sequence get the response: \n", rsp.sprint()}, UVM_MEDIUM)
         end
 
         #100;

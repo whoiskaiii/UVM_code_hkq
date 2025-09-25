@@ -93,7 +93,7 @@ class my_driver extends uvm_driver #(my_transaction);
             rsp = my_transaction::type_id::create("rsp"); // 返回的句柄赋值给 rsp
             $cast(rsp, req.clone()); // 复制 reg 给 rsp
             rsp.set_id_info(req); // 将 rsp 与 req 一一对应
-            seq_item_port.put_reponse(rsp); // 发送响应
+            seq_item_port.put_response(rsp); // 发送响应
 
             seq_item_port.item_done();
         end
